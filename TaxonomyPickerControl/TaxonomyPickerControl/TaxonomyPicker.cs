@@ -13,9 +13,7 @@ using System.Web.UI.WebControls;
 //Other assemsblies 
 using System.Data;  // For working with datatable
 using SourceCode.SmartObjects.Client;  // For calling SMO
-//using SourceCode.Forms.Controls.Web.Utilities; // For using the ConnectionClass
 using SourceCode.Forms.Utilities;
-//using SourceCode.Forms.Controls.Web.Shared;
 using System.Web.Script.Serialization;
 
 // Adding the JS file as a resource
@@ -46,12 +44,8 @@ namespace TaxonomyPickerControl
 
         public TaxonomyPicker() 
             : base("input")
-        {
-       
-            //   base.Attributes.Add("type", "hidden"); //needs to be hidden
+        {       
             base.Attributes.Add("id", "TaxonomyPickerControl");
-
-         //   base.Attributes.Add("data-taxJSON", @"{""TermId"":""1234"",""TermLabel"":""aLabel"",""TermPath"":""alabel""}");
         }
 
      
@@ -64,9 +58,6 @@ namespace TaxonomyPickerControl
 
 
                 SmartObjectClientServer smoServer = ConnectionClass.GetSmartObjectClient();
-
-                //  Just a SP List SMO??
-                //SmartObject aceReplicationTrackerList = Server.GetSmartObject(new Guid("4ffb5465-2022-4a2c-83a6-130083858a03"));
                 SmartObject mmdSmo = smoServer.GetSmartObject("portal_denallix_com_Management_Taxonomy");
                 SmartListMethod  getList = mmdSmo.ListMethods["GetAllChildTermsInTermSet"];
                 getList.InputProperties["TermStoreId"].Value = "0dd4b72451474d17a41b303ff2505c5f";
@@ -74,21 +65,15 @@ namespace TaxonomyPickerControl
                 mmdSmo.MethodToExecute = "GetAllChildTermsInTermSet";
               
 
-                //sb.Append(@"{""terms"":[");
                 var TermList = new List<Term>();
-                //getList.Filter = andCondition;
                 SmartObjectList smoList = smoServer.ExecuteList(mmdSmo);
                 foreach (SmartObject smo in smoList.SmartObjectsList)
                 {
                     string termId = smo.Properties["TermId"].Value;
                     string termLabel = smo.Properties["Label"].Value;
                     string termPath = smo.Properties["Path"].Value;
-                    //sb.Append(termId + ":" + termLabel + ":" + termPath);
-                    //sb.Append(@"{""TermId"":""" + termId +"}")
                     TermList.Add(new Term() { TermId = termId, TermLabel = termLabel, TermPath = termPath });
                 }
-                //sb.
-                //sb.Append(@"]}");
             var serializer = new JavaScriptSerializer();
             var serialized = serializer.Serialize(TermList);
             var fixedString = serialized.Replace("&quot;", @"""");
@@ -100,7 +85,6 @@ namespace TaxonomyPickerControl
 
         protected override void CreateChildControls()
         {
-            //this.Attributes.Add();
 
             switch(base.State)
             {
@@ -112,11 +96,7 @@ namespace TaxonomyPickerControl
                     break;
                 case SourceCode.Forms.Controls.Web.Shared.ControlState.Runtime:
                     this.Attributes.Add("type", "hidden");
-                    //this.Attributes.Add("data-taxJSON", @"{""TermId"":""1234"",""TermLabel"":""aLabel"",""TermPath"":""alabel""}");
                     this.Attributes.Add("data-taxJSON", getTaxData());
-                    //Page.ClientScript.RegisterStartupScript(
-                    //    typeof(Page), "TESTETSE", "$('#TaxonomyPickerControl').taxpicker({ isMulti: true, allowFillIn: true, useKeywords: true }, null);", true
-                    //    );
                     break;
             }
             

@@ -20,13 +20,12 @@ var CAMControl;
 
     //********************** START Term Class **********************
     //constructor for Term
-    //Changing for testing
     function Term(Id, Name, PathOfTerm) {
         this.Id = Id; //Id of the Term from SharePoint
         this.Name = Name; //Default label for the term in SharePoint
         // Need to take out the spaces around :
         //this.PathOfTerm = PathOfTerm.replace(' : ',':'); //label path of term delimited by semi-colons (ex: World;Europe;Finland)
-        this.PathOfTerm = PathOfTerm.replace(/ : /g, ':'); // Replace only replaces the first mathc, not all  in the string
+        this.PathOfTerm = PathOfTerm.replace(/ : /g, ':'); // Replace only replaces the first match, not all  in the string
 
             this.Children = new Array(); //child terms of the term
             this.Level = this.PathOfTerm.split(':').length - 1; //integer indicating the level of the term, Changed this to : for SMO return
@@ -122,18 +121,6 @@ var CAMControl;
                 this.FlatTerms.push(new Term(obj.terms[i].TermId,obj.terms[i].TermLabel,obj.terms[i].TermPath));
             }
 
-
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592f', 'Academia',  'Audience : Customers : Academia'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592a', 'CompSci',   'Audience : Customers : CompSci'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592b', 'Customers', 'Audience : Customers'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592c', 'Audience', 'Audience'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592d', 'Contries', 'Contries'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e592e', 'Spain', 'Contries : Spain'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e5920', 'US',    'Contries : US'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e5921', 'Asia',  'Contries : Asia'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e5922', 'China', 'Contries : Asia : China'));
-            //this.FlatTerms.push(new Term('025d0241-2d5a-4b70-a9eb-284af14e5923', 'Japan', 'Contries : Asia : Japan'));
-
             var topLevel = 0;
             //sort by Name that all of the choice will return alphabetically
             this.FlatTerms.sort(function (a, b) {
@@ -152,11 +139,9 @@ var CAMControl;
 
             //build a hierarchical representation of Terms by iterating through all of the terms for each level
             for (var currentLevel = 0; currentLevel <= topLevel; currentLevel++) {
-                //alert("Current Level " + currentLevel);
                 if (this.LevelToShowTerms > currentLevel || typeof (this.LevelToShowTerms) === 'undefined') {
                     for (var i = 0; i < this.FlatTerms.length; i++) {
                         var term = this.FlatTerms[i];
-                       // alert(term.Name + " - Level: " + term.Level + " Path" + term.PathOfTerm);
                         if (term.Level == currentLevel) {
                             var path = term.PathOfTerm.split(':'); // May need to switch to :
                             if (
@@ -337,7 +322,7 @@ var CAMControl;
             this.TermSet.initialize(); //initialize the termset to populate available terms
 
             //get script path so we can load translation files
-            //  Commenting out and hard-coding instead
+            //  Commenting out to use data from SMO instead
             //var scriptUrl = '';
             //var scriptRevision = '';
             //$('script').each(function (i, el) {

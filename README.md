@@ -37,7 +37,10 @@ Control setup and walkthrough.
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/TaxSuggestions.png)
 9. Or you can click the Tag to open the Picker tree:
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/PickerTree.png)
-10. If you update the Taxonomy store, you will have to do an IISReset to see that reflected in the control
+10.This is how the picked terms will appear:
+![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/PickedTerms.png)
+
+11. If you update the Taxonomy store, you will have to do an IISReset to see that reflected in the control
 
 
 You've probably noticed MANY many things that need to be improved in this control.  Grab a Fork and go for it!

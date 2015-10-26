@@ -1,0 +1,12 @@
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\TaxonomyPickerControl.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\TaxonomyPickerControl.pdb
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\SourceCode.HostClientAPI.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\SourceCode.SmartObjects.Services.ServiceSDK.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\SourceCode.Workflow.Client.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\SourceCode.Security.Web.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\obj\Debug\TaxonomyPickerControl.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\obj\Debug\TaxonomyPickerControl.pdb
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\SourceCode.Forms.Controls.Web.ControlPack.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\Telerik.Web.UI.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\bin\Debug\de\SourceCode.Forms.Controls.Web.ControlPack.resources.dll
+E:\Users\Mark\Documents\Visual Studio 2013\Projects\TaxonomyPickerControl\TaxonomyPickerControl\obj\Debug\TaxonomyPickerControl.csprojResolveAssemblyReference.cache

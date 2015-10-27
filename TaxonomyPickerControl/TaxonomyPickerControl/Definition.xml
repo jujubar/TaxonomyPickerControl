@@ -5,13 +5,9 @@
   <Group>Custom</Group>
   <Name>TaxonomyPickerControl</Name>
 
-  <GetValueMethod>CustomControls.TaxonomyPicker.getValue</GetValueMethod>
-  <SetValueMethod>CustomControls.TaxonomyPicker.setValue</SetValueMethod>
+  <GetValueMethod>TaxonomyPickerControl.Textbox.getValue</GetValueMethod>
+  <SetValueMethod>TaxonomyPickerControl.Textbox.setValue</SetValueMethod>
 
-  <DataTypes>
-    <DataType>Text</DataType>
-    <DataType>Guid</DataType>
-  </DataTypes>
   <Events>
     <Event>OnChange</Event>
     <Event>OnClick</Event>
@@ -21,12 +17,8 @@
   <Properties>
     <Prop ID="ControlName" inputlength="255" category="Detail" type="string" friendlyname="Name" DesignerValidate="SourceCode.Forms.Designers.validateControlname" refreshdisplay="true" ValidationMessage="Invalidname" ValidationPattern="\S" />
     <Prop ID="TermStoreGuid" friendlyname="TermStoreGuid" type="string" category="Detail" refreshdisplay="true" inputlength="255" />
-    <Prop ID="TermSetGuid"  friendlyname="TermSetGuid" type="string" category="Detail" refreshdisplay="true" inputlength="255" />
-    <Prop ID="SMOGuid"  friendlyname="SMOGuid" type="string" category="Detail" refreshdisplay="true" inputlength="255" />
-    
-    <Prop inputlength="255" category="Detail" type="drop" friendlyname="Data Type" refreshdisplay="true" ID="DataType" SelectionText="" SelectionValue="" getDropItemsFunction="getDataTypesForControl" setFunction="SetDataType">
-      <InitialValue>Text</InitialValue>
-    </Prop>
+    <Prop ID="TermSetGuid"   friendlyname="TermSetGuid"   type="string" category="Detail" refreshdisplay="true" inputlength="255" />
+    <Prop ID="SMOInternalName"       friendlyname="SMOInternalName"       type="string" category="Detail" refreshdisplay="true" inputlength="255" />
     <Prop ID="CustomProp" category="Detail" type="string" friendlyname="Custom Property" refreshdisplay="true" >
       <!--you can set a default value by setting the <Value> for the <Prop>-->
     </Prop>

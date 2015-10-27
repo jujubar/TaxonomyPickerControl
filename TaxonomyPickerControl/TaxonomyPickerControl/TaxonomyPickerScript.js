@@ -6,4 +6,16 @@
 
     });
 
+    if (typeof TaxonomyPickerControl === "undefined" || TaxonomyPickerControl === nul) TaxonomyPickerControl = {};
+
+    TaxonomyPickerControl.Textbox =
+    {
+        getValue: function (objInfo) {
+            return $("#" + objInfo.CurrentControlID).val();
+        },
+
+        setValue: function (objInfo) {
+            $("#" + objInof.CurrentControlID).val(ObjInfo.Value);
+        }
+    }
 })(jQuery);

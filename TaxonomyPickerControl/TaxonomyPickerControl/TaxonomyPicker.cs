@@ -48,7 +48,9 @@ namespace TaxonomyPickerControl
             base.Attributes.Add("id", "TaxonomyPickerControl");
         }
 
-     
+        public string TermStoreGuid { get; set; }
+        public string TermSetGuid { get; set; }
+        public string SMOInternalName { get; set; }
 
         private string getTaxData()
         {
@@ -58,12 +60,12 @@ namespace TaxonomyPickerControl
 
 
                 SmartObjectClientServer smoServer = ConnectionClass.GetSmartObjectClient();
-                SmartObject mmdSmo = smoServer.GetSmartObject("portal_denallix_com_Management_Taxonomy");
+                SmartObject mmdSmo = smoServer.GetSmartObject(this.SMOInternalName);
                 SmartListMethod  getList = mmdSmo.ListMethods["GetAllChildTermsInTermSet"];
-                getList.InputProperties["TermStoreId"].Value = "0dd4b72451474d17a41b303ff2505c5f";
-                getList.InputProperties["TermSetId"].Value = "b2534bad-9f43-496b-a759-c33d6e4d59b6";
+                getList.InputProperties["TermStoreId"].Value = this.TermStoreGuid;
+                getList.InputProperties["TermSetId"].Value = this.TermSetGuid;
                 mmdSmo.MethodToExecute = "GetAllChildTermsInTermSet";
-              
+                
 
                 var TermList = new List<Term>();
                 SmartObjectList smoList = smoServer.ExecuteList(mmdSmo);

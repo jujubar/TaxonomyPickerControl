@@ -24,23 +24,20 @@ Control setup and walkthrough.
 
 1. Navigate to /_layouts/15/termstoremanager.aspx in a SharePoint site collection, and add terms to the term store.
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/TermStoreAddTerms.png)
-2. Get the Guide of the MMS Store and Term set you wish to use.  Enter these values in the TaxonomyPicker.cs class, in the getTaxData method for input properties.
-3. Enter the system name of the taxonomyPickerSMO, also hard-coded.
-![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/TaxonomyReplaceHardcodedValues.png)
-4. Build the project.
-5. Add the custom control to the server, all resource files should be imbeded in the DLL so no need to transfer files
-6. Add the control to a view, then to a form.  The property setting are not important since they are not yet mapped but keep the name of 'TaxonomyPickerControl'
+2. Add the custom control to the server, all resource files should be imbeded in the DLL so no need to transfer files
+3. Add the control to a view, then go to it's settings
+4. Get the Guide of the MMS Store, Term set, and Taxonomy SMO internal name you wish to use.  Enter these values in the settings.
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/TaxonomyPickerSettings.png)
-7. When you run the form you should then see the following:
+5. When you run the form you should then see the following:
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/PickerRunning.png)
-8. You can start typing and the suggestions box will populate:
+6. You can start typing and the suggestions box will populate:
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/TaxSuggestions.png)
-9. Or you can click the Tag to open the Picker tree:
+7. Or you can click the Tag to open the Picker tree:
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/PickerTree.png)
-10.This is how the picked terms will appear:
+8.This is how the picked terms will appear:
 ![alt tag](https://github.com/markman623/TaxonomyPickerControl/blob/master/ReadMeImages/PickedTerms.png)
 
-11. If you update the Taxonomy store, you will have to do an IISReset to see that reflected in the control
+9. If you update the Taxonomy store, you will have to do an IISReset to see that reflected in the control
 
 
 You've probably noticed MANY many things that need to be improved in this control.  Grab a Fork and go for it!

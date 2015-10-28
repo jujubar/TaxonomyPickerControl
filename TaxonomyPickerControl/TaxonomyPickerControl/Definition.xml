@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ControlType>
   <FullName>TaxonomyPickerControl.TaxonomyPicker, TaxonomyPickerControl</FullName>
-  <Category>Display</Category>
+  <Category>Input</Category>
   <Group>Custom</Group>
   <Name>TaxonomyPickerControl</Name>
 

@@ -96,7 +96,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="taxonomypickercontrol.js" />
-    <EmbeddedResource Include="ControlScript.js" />
     <EmbeddedResource Include="taxonomypickercontrol.css" />
     <EmbeddedResource Include="Close.png" />
     <EmbeddedResource Include="EMMCopyTerm.png" />

@@ -6,16 +6,27 @@
 
     });
 
-    if (typeof TaxonomyPickerControl === "undefined" || TaxonomyPickerControl === nul) TaxonomyPickerControl = {};
+    if (typeof TaxonomyPickerControl === "undefined" || TaxonomyPickerControl === null) TaxonomyPickerControl = {};
 
     TaxonomyPickerControl.Textbox =
     {
         getValue: function (objInfo) {
-            return $("#" + objInfo.CurrentControlID).val();
+            var selectedTerms = "";
+            $.each($.taxpicker[0]._selectedTerms, function (index, value) {
+                selectedTerms += value.Name;
+            });
+
+            return selectedTerms;
         },
 
         setValue: function (objInfo) {
-            $("#" + objInof.CurrentControlID).val(ObjInfo.Value);
+            
+            // May need to update - Not sure about the objInfo value
+            $.each(objInfo.Value.split(";"), function (index, value) {
+                var term = $.taxpicker[0].TermSet.getTermById(value);
+                $.taxpicker[0]._selectedTerms.push(term);
+            });
+            $.taxpicker[0]._editor.html($.taxpicker[0].selectedTermsToHtml());
         }
     }
 })(jQuery);

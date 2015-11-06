@@ -45,7 +45,8 @@ namespace TaxonomyPickerControl
         public TaxonomyPicker() 
             : base("input")
         {       
-            base.Attributes.Add("id", "TaxonomyPickerControl");
+            //base.Attributes.Add("id", "TaxonomyPickerControl");
+
         }
 
         public string TermStoreGuid { get; set; }

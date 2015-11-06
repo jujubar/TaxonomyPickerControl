@@ -116,7 +116,10 @@ var CAMControl;
             //    this.FlatTerms.push(term);
             //}
             
-            var obj = $.parseJSON($('#TaxonomyPickerControl').attr("data-taxJSON").toString());
+            //  This is creating a problem, need to find a way to dynamically refer to the conotrol....
+
+            var obj = $.parseJSON($('.TaxonomyPickerControl-TaxonomyPicker').attr("data-taxJSON").toString());
+            
             for(var i =0; i < obj.terms.length; i++){
                 this.FlatTerms.push(new Term(obj.terms[i].TermId,obj.terms[i].TermLabel,obj.terms[i].TermPath));
             }
@@ -189,6 +192,7 @@ var CAMControl;
                         break;
                     }
                 }
+
             }
 
             return termList;
@@ -809,7 +813,7 @@ var CAMControl;
             this.closePickerDialog(event);
 
             if (this._changeCallback != null)
-                this._changeCallback();
+                this._changeCallback(this._control);
         },
         //dialog Cancel button clicked
         dialogCancelClicked: function (event) {
@@ -934,7 +938,7 @@ var CAMControl;
             this._editor.focus();
 
             if (this._changeCallback != null)
-                this._changeCallback();
+                this._changeCallback(this._control);
         },
         //used to check if focus is lost from the control (invalidate and hide suggestions)
         checkExternalClick: function (event) {
